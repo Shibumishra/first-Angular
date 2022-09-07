@@ -6,17 +6,79 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div>
+  <app-header></app-header>
+  <div class="container">
 
-<h1>Hello, Angular {{title}}</h1>
-<h2>{{name}}</h2>
-<h3>{{getValue()}}</h3>
-<app-register></app-register>
-<app-login></app-login>
-<app-user-list></app-user-list>
-<app-student-list></app-student-list>
-<app-country-list></app-country-list>
-<app-sign-in></app-sign-in>
-<app-sign-up></app-sign-up>
+    <form
+      #basicForm="ngForm"
+      (ngSubmit)="getData(basicForm.value)"
+      class="basic-form"
+    >
+      <input type="text" ngModel name="user" placeholder="Enter User Name" />
+      <input type="text" ngModel name="email" placeholder="Enter User Email" />
+      <input
+        type="text"
+        ngModel
+        name="password"
+        placeholder="Enter User Password"
+      />
+      <button>Register</button>
+    </form>
+
+    <div class="main-container">
+
+      <div>
+        <ul>
+          <li>{{ userData.user }}</li>
+          <li>{{ userData.email }}</li>
+        </ul>
+      </div>
+
+      <div class="basic-form">
+        <h2>Todo List</h2>
+        <br />
+        <input type="text" placeholder="Enter New Task" #task>
+        <button (click)="addTask(task.value)">Add Task</button>
+        <br />
+        <br />
+        <ul *ngFor="let item of todoList">
+          <li>{{item.name}} <button (click)="removeTask(item.id)"> Remove</button> </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Boostrap</h3>
+        <p>
+          <ngb-alert [dismissible]="false">
+            <strong>Warning!</strong> Better check yourself, you're not looking too good.
+          </ngb-alert>
+        </p>
+      </div>
+
+      <div>
+        <h3>Material-Ui</h3>
+        <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+      </div>
+
+      <div>
+        <h1 *ngIf="display">Heading Tag</h1>
+        <button (click)="toggle()">Toggle</button>
+      </div>
+
+      <h1>Hello, Angular {{ title }}</h1>
+      <h2>{{ name }}</h2>
+      <h3>{{ getValue() }}</h3>
+      <app-register></app-register>
+      <app-login></app-login>
+      <app-user-list></app-user-list>
+      <app-student-list></app-student-list>
+      <app-country-list></app-country-list>
+      <app-sign-in></app-sign-in>
+      <app-sign-up></app-sign-up>
+    </div>
+  </div>
+</div>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->

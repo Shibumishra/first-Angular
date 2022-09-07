@@ -1,1 +1,21 @@
-<p>sign-in works!</p>
+<p>sign-in works! {{title}}</p>
+<button (click)="getData('hello')">Click Me</button>
+
+<br />
+<br />
+<input type="text" placeholder="event keyup" #box (keyup)="getData(box.value)" />
+
+<br />
+<br />
+<input type="text" placeholder="event keydown" #box1 (keydown)="getData(box1.value)" />
+
+<br />
+<br />
+<input type="text" placeholder="event blur" #box2 (blur)="getData(box2.value)" />
+
+<br />
+<br />
+<input type="text" placeholder="event blur" #box3 (input)="getData(box3.value)" />
+
+<h1 (mouseover)="getData('over')">Mouse over</h1>
+<h1 (mouseleave)="getData('Leave')">Mouse Leave</h1>

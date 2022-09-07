@@ -12,4 +12,8 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  title="Import Event in angular"
+  getData(val:string){
+    console.log(val);
+  }
 }

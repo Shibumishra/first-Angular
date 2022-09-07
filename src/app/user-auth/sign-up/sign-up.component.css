@@ -1,0 +1,14 @@
+.name-box h3{
+  background-color: blueviolet;
+  color: #fff;
+  padding: 16px;
+  font-size: 18px;
+  width: 20%;
+  margin: auto;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.userD{
+  background-color: rgb(42, 75, 165);
+  color: rgb(239, 242, 246);
+}

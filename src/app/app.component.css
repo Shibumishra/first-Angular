@@ -1,0 +1,33 @@
+.main-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.container{
+  margin-top: 100px;
+}
+.basic-form{
+  margin: auto;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.basic-form input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid red;
+}
+.basic-form button{
+  padding: 10px;
+  border: none;
+  background-color: blueviolet;
+  color: #fff;
+  margin: auto;
+  width: 20%;
+}

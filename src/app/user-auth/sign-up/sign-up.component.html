@@ -1,1 +1,72 @@
-<p>sign-up works!</p>
+<p>sign-up works! {{ title }}</p>
+<input type="text" placeholder="Enter Name" name="name" #name />
+<input type="password" placeholder="Enter password" name="password" #password />
+<button (click)="getValue(name.value)">Click</button>
+<p>Your Name: {{ displayVal }}</p>
+
+<br /><br />
+
+<h1>Counter With Angular</h1>
+<div>
+  <button (click)="counter('minus')">-</button>
+  <p>count: {{ count }}</p>
+  <button (click)="counter('add')">+</button>
+</div>
+
+<br />
+<br />
+
+<h1 *ngIf="show; then ifBlock; else elseblock"></h1>
+
+<ng-template #ifBlock>
+  <h1>IF Condition</h1>
+</ng-template>
+
+<ng-template #elseblock>
+  <h1>Else Condition</h1>
+</ng-template>
+
+<h1 *ngIf="textShow == 'yes'; then ifTextBlock; else elseTextblock"></h1>
+
+<ng-template #ifTextBlock>
+  <h1>Text IF Condition</h1>
+</ng-template>
+
+<ng-template #elseTextblock>
+  <h1>Text Else Condition</h1>
+</ng-template>
+
+<h1>Toggle a Div on Button Click Angular Example</h1>
+<button (click)="toggleDisplayDivIf()">Toggle display Div If</button>
+<div *ngIf="!isShowDivIf">This is Div If.</div>
+
+<div [ngSwitch]="color">
+  <h1>ngSwitch</h1>
+  <h1 *ngSwitchCase="'red'" style="color: red">Red Color</h1>
+  <h1 *ngSwitchCase="'green'" style="color: green">Red Color</h1>
+  <h1 *ngSwitchDefault>Unknown Color</h1>
+</div>
+
+<div class="name-box">
+  <h1>Array Map</h1>
+  <h3 *ngFor="let item of Users">{{ item }}</h3>
+  <div *ngFor="let item of UsersDetails" class="userD">
+    <ul>
+      <li>{{ item.name }}</li>
+      <li>{{ item.email }}</li>
+      <li>{{ item.phone }}</li>
+      <ul *ngFor="let account of item.socialAccounts">
+        <li>{{ account }}</li>
+      </ul>
+    </ul>
+  </div>
+</div>
+
+<br />
+<br />
+
+<div>
+  <h1>Color:</h1>
+<h2 [style.color]="styleColor" [style.backgroundColor]="bgColor">{{ styleTitle }}</h2>
+<button (click)="updateColor()">Update Color</button>
+</div>
